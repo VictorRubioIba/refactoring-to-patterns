@@ -22,16 +22,22 @@ namespace RefactoringToPatterns.ComposeMethod
             if(!_readOnly) {
                 int newSize = _size + 1;
 
-                if(newSize > _elements.Length) {
-                    Object[] newElements = new Object[_elements.Length + 10];
-
-                    for (int i = 0; i < _size; i++)
-                        newElements[i] = _elements[i];
-
-                    _elements = newElements;
-                }
+                createNewList(newSize);
 
                 _elements[_size++] = element;
+            }
+        }
+
+        private void createNewList(int newSize)
+        {
+            if (newSize > _elements.Length)
+            {
+                Object[] newElements = new Object[_elements.Length + 10];
+
+                for (int i = 0; i < _size; i++)
+                    newElements[i] = _elements[i];
+
+                _elements = newElements;
             }
         }
 
