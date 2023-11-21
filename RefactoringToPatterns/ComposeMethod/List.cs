@@ -20,9 +20,9 @@ namespace RefactoringToPatterns.ComposeMethod
 
         public void Add(Object element) {
             if(!_readOnly) {
-                int newSize = _size + 1;
+                
 
-                CreateNewList(newSize);
+                CreateNewList(_size + 1);
 
                 _elements[_size++] = element;
             }
