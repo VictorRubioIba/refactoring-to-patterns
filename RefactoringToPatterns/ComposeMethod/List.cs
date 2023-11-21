@@ -22,13 +22,13 @@ namespace RefactoringToPatterns.ComposeMethod
             if(!_readOnly) {
                 int newSize = _size + 1;
 
-                createNewList(newSize);
+                CreateNewList(newSize);
 
                 _elements[_size++] = element;
             }
         }
 
-        private void createNewList(int newSize)
+        private void CreateNewList(int newSize)
         {
             if (newSize > _elements.Length)
             {
