@@ -24,8 +24,13 @@ namespace RefactoringToPatterns.ComposeMethod
 
                 CreateNewList(_size + 1);
 
-                _elements[_size++] = element;
+                AddElement(element);
             }
+        }
+
+        private object AddElement(object element)
+        {
+            return _elements[_size++] = element;
         }
 
         private void CreateNewList(int newSize)
