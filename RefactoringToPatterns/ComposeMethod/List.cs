@@ -18,14 +18,11 @@ namespace RefactoringToPatterns.ComposeMethod
             _elements = new Object[_size];
         }
 
-        public void Add(Object element) {
-            if(!_readOnly) {
-                
-
-                CreateNewList(_size + 1);
-
-                AddElement(element);
-            }
+        public void Add(Object element)
+        {
+            if (_readOnly) return;
+            CreateNewList(_size + 1);
+            AddElement(element);
         }
 
         private object AddElement(object element)
