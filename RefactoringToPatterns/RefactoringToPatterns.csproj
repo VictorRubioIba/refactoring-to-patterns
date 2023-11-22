@@ -54,6 +54,7 @@
         <Compile Include="CommandPattern.Tests\MarsRoverShould.cs" />
         <Compile Include="CommandPattern\MarsRover.cs" />
         <Compile Include="CommandPattern\MoveEast.cs" />
+        <Compile Include="CommandPattern\MoveNorth.cs" />
         <Compile Include="ComposeMethod.Tests\ListShould.cs" />
         <Compile Include="ComposeMethod\List.cs" />
         <Compile Include="CreationMethods.Tests\ProductPackageShould.cs" />
