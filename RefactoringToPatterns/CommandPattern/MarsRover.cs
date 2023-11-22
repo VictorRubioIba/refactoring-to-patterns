@@ -15,6 +15,7 @@ namespace RefactoringToPatterns.CommandPattern
         private readonly MoveNorth _moveNorth;
         private readonly MoveWest _moveWest;
         private readonly MoveSouth _moveSouth;
+        private Dictionary<char, IMove> movements = new Dictionary<char, IMove>();
         
 
         public MarsRover(int x, int y, char direction, string[] obstacles)
@@ -27,6 +28,11 @@ namespace RefactoringToPatterns.CommandPattern
             _moveNorth = new MoveNorth(this);
             _moveWest = new MoveWest(this);
             _moveSouth = new MoveSouth(this);
+            movements.Add('E',_moveEast);
+            movements.Add('N',_moveNorth);
+            movements.Add('S',_moveSouth); 
+            movements.Add('W',_moveWest);
+            
         }
         
         public string GetState()
@@ -40,21 +46,8 @@ namespace RefactoringToPatterns.CommandPattern
             {
                 if (command == 'M')
                 {
-                    switch (_direction)
-                    {
-                        case 'E':
-                            _moveEast.Move();
-                            break;
-                        case 'S':
-                            _moveSouth.Move();
-                            break;
-                        case 'W':
-                            _moveWest.Move();
-                            break;
-                        case 'N':
-                            _moveNorth.Move();
-                            break;
-                    }
+                    IMove movement = movements[_direction];
+                    movement.Move();
                 }
                 else if(command == 'L')
                 {
