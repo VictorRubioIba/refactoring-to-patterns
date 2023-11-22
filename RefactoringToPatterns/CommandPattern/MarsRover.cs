@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RefactoringToPatterns.CommandPattern
@@ -14,6 +15,7 @@ namespace RefactoringToPatterns.CommandPattern
         private readonly MoveNorth _moveNorth;
         private readonly MoveWest _moveWest;
         private readonly MoveSouth _moveSouth;
+        
 
         public MarsRover(int x, int y, char direction, string[] obstacles)
         {
